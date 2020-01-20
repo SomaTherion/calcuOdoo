@@ -1,7 +1,7 @@
 {
     'name': 'calculo',
     'summary': 'módulo calculo',
-    'author': 'Soma,
+    'author': 'Soma',
     'version': '1.0',
     'website': 'iesayala.ddns.net',
     'depends': ['base'],

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="calculo_modelo_action" name="modelo"
+                     res_model="calculo.modelo" />
+
+         <menuitem name="calculo" id="menu_calculo" action="calculo_modelo_action"  sequence="17"/>
+
+
+        <record id="calculo_modelo_view_tree" model="ir.ui.view">
+            <field name="name">Lista articulo</field>
+            <field name="model">calculo.modelo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                    <field name="precio" />
+                    <field name="iva" />
+                    <field name="cantidad" />
+                    <field name="total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="calculo_modelo_view_form" model="ir.ui.view">
+            <field name="name">Formulario de articulo</field>
+            <field name="model">calculo.modelo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nombre" />
+                        <field name="precio" />
+                        <field name="iva" />
+                        <field name="cantidad" />
+                        <field name="total" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="calculo2_modelo_view_search" model="ir.ui.view">
+            <field name="name">Busqueda articulos</field>
+            <field name="model">calculo.modelo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="precio" />
+                    <field name="iva" />
+                    <field name="cantidad" />
+                    <field name="total" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

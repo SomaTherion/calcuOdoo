@@ -16,11 +16,13 @@ class Modelo(models.Model):
     def _total(self):
         self.total = self.precio * self.cantidad
 
+    @api.one
     @api.depends('precio', 'cantidad', 'iva')
     def _iva(self):
         self.total = self.precio * self.cantidad * ((self.iva/100)+1)
         self.total = self.total - (self.precio * self.cantidad)
 
+    @api.one
     @api.depends('total', 'desglose')
     def _sumaTotal(self):
         self.total = self.total + self.desglose

@@ -8,7 +8,7 @@ class Modelo(models.Model):
     desglose = fields.Float('Desglose', compute='_iva')
     cantidad = fields.Integer('Cantidad', required=True)
     total = fields.Float(string='Total', compute='_total')
-    totalIva = fields.Float(string='TotalIVA', compute='_sumaTotal')
+    totalIVA = fields.Float(string='TotalIVA', compute='_sumaTotal')
 
 
     @api.one

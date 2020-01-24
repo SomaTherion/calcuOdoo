@@ -5,7 +5,7 @@ class Modelo(models.Model):
     nombre = fields.Char('Articulo', required=True)
     precio = fields.Float('Precio', required=True)
     iva = fields.Integer('IVA', required=True)
-    desglose = fields.Float('Desglose', compute='_iva')
+    desglose = fields.Float(string='Desglose', compute='_iva')
     cantidad = fields.Integer('Cantidad', required=True)
     total = fields.Float(string='Total', compute='_total')
     totalIVA = fields.Float(string='TotalIVA', compute='_sumaTotal')
@@ -19,11 +19,11 @@ class Modelo(models.Model):
     @api.one
     @api.depends('precio', 'cantidad', 'iva')
     def _iva(self):
-        self.total = self.precio * self.cantidad * ((self.iva/100)+1)
-        self.total = self.total - (self.precio * self.cantidad)
+        self.desglose = self.precio * self.cantidad * ((self.iva/100)+1)
+        self.desglose = self.desglose - (self.precio * self.cantidad)
 
     @api.one
     @api.depends('total', 'desglose')
     def _sumaTotal(self):
-        self.total = self.total + self.desglose
+        self.totalIVA = self.total + self.desglose
 

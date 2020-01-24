@@ -41,7 +41,7 @@
             </field>
         </record>
 
-        <record id="calculo2_modelo_view_search" model="ir.ui.view">
+        <record id="calculo_modelo_view_search" model="ir.ui.view">
             <field name="name">Busqueda articulos</field>
             <field name="model">calculo.modelo</field>
             <field name="arch" type="xml">

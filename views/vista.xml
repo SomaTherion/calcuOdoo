@@ -17,6 +17,8 @@
                     <field name="iva" />
                     <field name="cantidad" />
                     <field name="total" />
+                    <field name="desglose" />
+                    <field name="totalIVA" />
                 </tree>
             </field>
         </record>
@@ -32,6 +34,8 @@
                         <field name="iva" />
                         <field name="cantidad" />
                         <field name="total" />
+                        <field name="desglose" />
+                        <field name="totalIVA" />
                     </group>
                 </form>
             </field>
@@ -47,6 +51,8 @@
                     <field name="iva" />
                     <field name="cantidad" />
                     <field name="total" />
+                    <field name="desglose" />
+                     <field name="totalIVA" />
                 </search>
             </field>
         </record>

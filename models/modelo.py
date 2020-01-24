@@ -18,7 +18,7 @@ class Modelo(models.Model):
 
     @api.depends('precio', 'cantidad', 'iva')
     def _iva(self):
-            self.total = self.precio - (self.precio * self.cantidad * ((self.iva / 100) + 1))
+        self.total = self.precio - (self.precio * self.cantidad * ((self.iva / 100) + 1))
 
     @api.depends('total', 'desglose')
     def _sumaTotal(self):
